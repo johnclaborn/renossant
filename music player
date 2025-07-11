@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Renossant Playlist</title>
+
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+
+  <style>
+    :root {
+      --purple-dark: #6d049eff;
+      --purple-light: #8c049eff;
+      --bg: #FFFFFF;
+      --text: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, sans-serif;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color: var(--purple-light);
+      letter-spacing: 0.03em;
+    }
+
+    .tracklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tracklist li {
+      padding: 12px 10px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.25s;
+    }
+
+    .tracklist li:hover {
+      background: rgba(177, 156, 217, 0.08);
+    }
+
+    .tracklist li.active {
+      background: rgba(177, 156, 217, 0.2);
+      font-weight: 600;
+      color: var(--purple-light);
+      position: relative;
+    }
+
+    .tracklist li.active::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 4px;
+      background-color: var(--purple-light);
+    }
+
+    #waveform {
+      margin: 30px 0 20px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .controls button {
+      background: var(--purple-dark);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+
+    .controls button:hover {
+      background: #6020aa;
+    }
+
+    .volume-slider {
+      width: 120px;
+      appearance: none;
+      background: #333;
+      height: 6px;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .volume-container {
+      margin-top: 10px;
+    }
+
+    .volume-container label {
+      margin-right: 10px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎶 Renossant Playlist</h1>
+
+    <ul class="tracklist" id="playlist">
+      <li data-src="https://johnclaborn.github.io/renossant/Main%20Produkt%20-%20High%20Beams%201.mp3">
+        Main Produkt – High Beams 1
+      </li>
+      <!-- Add more tracks here -->
+    </ul>
+
+    <div id="waveform"></div>
+
+    <div class="controls">
+      <button id="prev">⏮ Prev</button>
+      <button id="play">▶️ Play / ⏸ Pause</button>
+      <button id="next">⏭ Next</button>
+    </div>
+
+    <div class="volume-container">
+      <label for="volume">🔊 Volume</label>
+      <input type="range" id="volume" class="volume-slider" min="0" max="1" step="0.01" value="1" />
+    </div>
+  </div>
+
+  <script>
+    const wavesurfer = WaveSurfer.create({
+      container: "#waveform",
+      waveColor: "#6a0dad",
+      progressColor: "#b19cd9",
+      height: 90,
+      responsive: true,
+      barWidth: 2,
+      barGap: 2,
+    });
+
+    const trackItems = Array.from(document.querySelectorAll("#playlist li"));
+    let current = 0;
+
+    function load(index) {
+      const src = trackItems[index].dataset.src.trim();
+      wavesurfer.load(src);
+      highlight(index);
+    }
+
+    function highlight(index) {
+      trackItems.forEach((li, i) => li.classList.toggle("active", i === index));
+    }
+
+    trackItems.forEach((li, i) =>
+      li.addEventListener("click", () => {
+        current = i;
+        load(current);
+      })
+    );
+
+    wavesurfer.on("finish", () => {
+      current = (current + 1) % trackItems.length;
+      load(current);
+    });
+
+    document.getElementById("play").onclick = () => wavesurfer.playPause();
+    document.getElementById("prev").onclick = () => {
+      current = (current - 1 + trackItems.length) % trackItems.length;
+      load(current);
+    };
+    document.getElementById("next").onclick = () => {
+      current = (current + 1) % trackItems.length;
+      load(current);
+    };
+
+    document.getElementById("volume").oninput = (e) => {
+      wavesurfer.setVolume(e.target.value);
+    };
+
+    load(current);
+  </script>
+</body>
+</html>
