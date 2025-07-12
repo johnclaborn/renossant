@@ -164,6 +164,40 @@
       updateCart();
     }
   </script>
+<!-- Order Form -->
+<form id="order-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:none;">
+  <input type="hidden" name="cart" id="form-cart" />
+  <input type="hidden" name="total" id="form-total" />
+  <input type="hidden" name="source" value="Renossant Merch" />
+
+  <h2 style="margin-top: 40px;">Enter Your Info</h2>
+  <input type="text" name="name" placeholder="Full Name" required style="padding: 10px; margin: 5px; width: 280px;" /><br>
+  <input type="email" name="email" placeholder="Email Address" required style="padding: 10px; margin: 5px; width: 280px;" /><br>
+  <textarea name="address" placeholder="Shipping Address" rows="4" required style="padding: 10px; margin: 5px; width: 280px;"></textarea><br>
+  <button type="submit">✅ Submit Order</button>
+</form>
+
+<!-- Show Order Button -->
+<button onclick="showOrderForm()" style="margin-top: 20px;">📬 Complete Order</button>
+
+<script>
+  function showOrderForm() {
+    if (cartItems.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    // Fill form fields with cart contents
+    const cartList = cartItems.map(item => item.description).join('\n');
+    document.getElementById('form-cart').value = cartList;
+    document.getElementById('form-total').value = "$" + total;
+
+    // Show form
+    document.getElementById('order-form').style.display = 'block';
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+
 
 </body>
 </html>
