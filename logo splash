@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Renossant</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 60vmin;
+      height: auto;
+      opacity: 0;
+      transform: scale(0.92);
+      animation: fadeZoom 2s ease-out forwards, flicker 4s linear infinite;
+      image-rendering: auto;
+    }
+
+    @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      2%, 8%, 12%, 60% { opacity: 0.98; }
+      5%, 11%, 58% { opacity: 0.9; }
+      3%, 10%, 15%, 20% { opacity: 1; }
+      55% { opacity: 0.97; }
+      59% { opacity: 0.94; }
+      61% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <img
+    class="logo"
+    src="https://johnclaborn.github.io/renossant/Renossant%20logo%20purple%203000.png"
+    alt="Renossant Logo"
+/>
+</body>
+</html>
