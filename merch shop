@@ -184,13 +184,13 @@
     const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp5uXMBPtEP8dqF9DUV1zl6zKsetwEbseeicAFpnaPB_P_FQ/viewform";
 
     // Field ID for "Your Order" textarea
-    const orderFieldID = "entry.1460322462";
+    const orderFieldID = "entry.1269873545";
 
     // Final form URL with prefilled cart data
     const formURL = `${baseURL}?${orderFieldID}=${fullOrder}`;
 
     // Open in new tab
-    window.open(formURL, '_blank');
+    window.location.href = formURL;
   }
 </script>
 </body>
