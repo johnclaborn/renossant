@@ -2,199 +2,287 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Renossant Playlist</title>
-
-  <script src="https://unpkg.com/wavesurfer.js"></script>
-
+  <title>Renossant Merch</title>
   <style>
-    :root {
-      --purple-dark: #6d049eff;
-      --purple-light: #8c049eff;
-      --bg: #FFFFFF;
-      --text: #f5f5f5;
-    }
-
     body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
+      background: #ffffff;
+      color: #111;
       font-family: system-ui, sans-serif;
-    }
-
-    .container {
-      max-width: 650px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      text-align: center;
+      padding: 40px;
+      margin: 0;
     }
 
     h1 {
-      margin-bottom: 2rem;
-      color: var(--purple-light);
-      letter-spacing: 0.03em;
+      color: #6d049e;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
-    .tracklist {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .tracklist li {
-      padding: 12px 10px;
-      cursor: pointer;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: background 0.25s;
-    }
-
-    .tracklist li:hover {
-      background: rgba(177, 156, 217, 0.08);
-    }
-
-    .tracklist li.active {
-      background: rgba(177, 156, 217, 0.2);
-      font-weight: 600;
-      color: var(--purple-light);
-      position: relative;
-    }
-
-    .tracklist li.active::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 4px;
-      background-color: var(--purple-light);
-    }
-
-    #waveform {
-      margin: 30px 0 20px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .controls {
+    .shop-layout {
       display: flex;
-      justify-content: center;
+      gap: 40px;
+      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
     }
 
-    .controls button {
-      background: var(--purple-dark);
-      color: #fff;
+    .product-list {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .item {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .item h2 {
+      margin: 10px 0;
+    }
+
+    .selectors {
+      margin: 10px 0;
+    }
+
+    select {
+      padding: 6px 10px;
+      margin: 4px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #6d049e;
+      color: white;
       border: none;
       padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.25s;
-    }
-
-    .controls button:hover {
-      background: #6020aa;
-    }
-
-    .volume-slider {
-      width: 120px;
-      appearance: none;
-      background: #333;
-      height: 6px;
-      border-radius: 4px;
-      outline: none;
-    }
-
-    .volume-container {
+      font-size: 16px;
       margin-top: 10px;
     }
 
-    .volume-container label {
-      margin-right: 10px;
-      color: #aaa;
+    button:hover {
+      background: #4a0273;
+    }
+
+    #cart {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      height: fit-content;
+      position: sticky;
+      top: 40px;
+    }
+
+    #cart ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      text-align: left;
+    }
+
+    #cashapp-instructions {
+      font-size: 1.1rem;
+      color: #444;
+      margin-top: 20px;
+    }
+
+    .clear-btn {
+      background: #999;
+      margin-top: 10px;
+    }
+
+    .clear-btn:hover {
+      background: #777;
+    }
+
+    #popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6d049e;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎶 Renossant Playlist</h1>
+  <h1>🛍️ Renossant Merch</h1>
 
-    <ul class="tracklist" id="playlist">
-      <li data-src="https://johnclaborn.github.io/renossant/Main%20Produkt%20-%20High%20Beams%201.mp3">
-        Main Produkt – High Beams 1
-      </li>
-      <!-- Add more tracks here -->
-    </ul>
+  <div class="shop-layout">
+    <div class="product-list">
+      <div class="item">
+        <h2>Renossant T-Shirt</h2>
+        <p>$25</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+          <select>
+            <option value="">Select color</option>
+            <option>Black</option>
+            <option>White</option>
+            <option>Purple</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Renossant T-Shirt', 25)">Add to Cart</button>
+      </div>
 
-    <div id="waveform"></div>
+      <div class="item">
+        <h2>Renossant Hoodie</h2>
+        <p>$45</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+          <select>
+            <option value="">Select color</option>
+            <option>Black</option>
+            <option>Grey</option>
+            <option>Purple</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Renossant Hoodie', 45)">Add to Cart</button>
+      </div>
 
-    <div class="controls">
-      <button id="prev">⏮ Prev</button>
-      <button id="play">▶ Play / ⏸ Pause</button>
-      <button id="next">⏭ Next</button>
+      <div class="item">
+        <h2>Renossant Hat</h2>
+        <p>$20</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select style</option>
+            <option>Snapback</option>
+            <option>Beanie</option>
+          </select>
+          <select>
+            <option value="">Select color</option>
+            <option>Black</option>
+            <option>White</option>
+            <option>Purple</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Renossant Hat', 20)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <h2>Limited Poster</h2>
+        <p>$30</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select version</option>
+            <option>High Beams</option>
+            <option>Studio Swiip</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Limited Poster', 30)">Add to Cart</button>
+      </div>
     </div>
 
-    <div class="volume-container">
-      <label for="volume">Volume</label>
-      <input type="range" id="volume" class="volume-slider" min="0" max="1" step="0.01" value="1" />
+    <div id="cart">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p><strong>Total: $<span id="total">0</span></strong></p>
+      <div id="cashapp-instructions" style="display:none;">
+        Send total to <strong>$YourCashtag</strong> on Cash App<br />
+        Include item names, sizes, and colors in the note ✉️
+      </div>
+      <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+      <button onclick="sendToGoogleForm()" style="margin-top: 20px;">
+        📬 Complete Order
+      </button>
     </div>
   </div>
 
+  <div id="popup">Item added to cart</div>
+
   <script>
-    const wavesurfer = WaveSurfer.create({
-      container: "#waveform",
-      waveColor: "#6a0dad",
-      progressColor: "#b19cd9",
-      height: 90,
-      responsive: true,
-      barWidth: 2,
-      barGap: 2,
-    });
+    let total = 0;
+    let cartItems = [];
 
-    const trackItems = Array.from(document.querySelectorAll("#playlist li"));
-    let current = 0;
+    function addToCart(name, price) {
+      const selectors = event.target.parentElement.querySelectorAll('select');
+      const values = Array.from(selectors).map(sel => sel.value);
 
-    function load(index) {
-      const src = trackItems[index].dataset.src.trim();
-      wavesurfer.load(src);
-      highlight(index);
+      if (values.includes("")) {
+        alert('Please make all selections.');
+        return;
+      }
+
+      const itemDescription = `${name} — ${values.join(", ")}`;
+      const existing = cartItems.find(item => item.description === itemDescription);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartItems.push({ description: itemDescription, price: price, quantity: 1 });
+      }
+
+      total += price;
+      updateCart();
+      showPopup();
     }
 
-    function highlight(index) {
-      trackItems.forEach((li, i) => li.classList.toggle("active", i === index));
+    function updateCart() {
+      const list = document.getElementById("cart-items");
+      list.innerHTML = cartItems
+        .map(item => `<li>${item.description} — $${item.price} x${item.quantity}</li>`)
+        .join('');
+      document.getElementById("total").innerText = total;
+      document.getElementById("cashapp-instructions").style.display = cartItems.length ? 'block' : 'none';
     }
 
-    trackItems.forEach((li, i) =>
-      li.addEventListener("click", () => {
-        current = i;
-        load(current);
-      })
-    );
+    function clearCart() {
+      cartItems = [];
+      total = 0;
+      updateCart();
+    }
 
-    wavesurfer.on("finish", () => {
-      current = (current + 1) % trackItems.length;
-      load(current);
-    });
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 1800);
+    }
 
-    document.getElementById("play").onclick = () => wavesurfer.playPause();
-    document.getElementById("prev").onclick = () => {
-      current = (current - 1 + trackItems.length) % trackItems.length;
-      load(current);
-    };
-    document.getElementById("next").onclick = () => {
-      current = (current + 1) % trackItems.length;
-      load(current);
-    };
+    function sendToGoogleForm() {
+      if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
 
-    document.getElementById("volume").oninput = (e) => {
-      wavesurfer.setVolume(e.target.value);
-    };
+      const cartList = cartItems
+        .map(item => `${item.description} — $${item.price} x${item.quantity}`)
+        .join('\n');
+      const totalText = "Total: $" + total;
+      const fullOrder = encodeURIComponent(`${cartList}\n${totalText}`);
 
-    load(current);
+      const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp5uXMBPtEP8dqF9DUV1zl6zKsetwEbseeicAFpnaPB_P_FQ/viewform";
+      const orderFieldID = "entry.1460322462";
+
+      const formURL = `${baseURL}?${orderFieldID}=${fullOrder}`;
+      window.location.href = formURL;
+    }
   </script>
 </body>
 </html>
