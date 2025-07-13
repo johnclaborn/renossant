@@ -9,20 +9,35 @@
       color: #111;
       font-family: system-ui, sans-serif;
       padding: 40px;
-      text-align: center;
+      margin: 0;
     }
 
     h1 {
-      color: #4b0082;
+      color: #6d049e;
+      text-align: center;
       margin-bottom: 40px;
+    }
+
+    .shop-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      width: 100%;
     }
 
     .item {
       background: #f5f5f5;
       padding: 20px;
-      margin: 20px auto;
       border-radius: 10px;
-      max-width: 400px;
+      width: 300px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
@@ -42,7 +57,7 @@
     }
 
     button {
-      background: #4b0082;
+      background: #6d049e;
       color: white;
       border: none;
       padding: 10px 16px;
@@ -53,17 +68,15 @@
     }
 
     button:hover {
-      background: #6020aa;
+      background: #4a0273;
     }
 
     #cart {
-      margin-top: 40px;
       background: #f0f0f0;
       padding: 20px;
       border-radius: 10px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+      width: 100%;
+      max-width: 420px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
@@ -88,71 +101,150 @@
     .clear-btn:hover {
       background: #777;
     }
+
+    #popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6d049e;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
-
   <h1>🛍️ Renossant Merch</h1>
 
-  <!-- Product Block -->
-  <div class="item">
-    <h2>Renossant T-Shirt</h2>
-    <p>$25</p>
-    <div class="selectors">
-      <select id="shirt-size">
-        <option value="">Select size</option>
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-      </select>
-      <select id="shirt-color">
-        <option value="">Select color</option>
-        <option>Black</option>
-        <option>White</option>
-        <option>Purple</option>
-      </select>
+  <div class="shop-layout">
+    <div class="product-list">
+      <div class="item">
+        <h2>Renossant T-Shirt</h2>
+        <p>$25</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+          <select>
+            <option value="">Select color</option>
+            <option>Black</option>
+            <option>White</option>
+            <option>Purple</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Renossant T-Shirt', 25)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <h2>Renossant Hoodie</h2>
+        <p>$45</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+          <select>
+            <option value="">Select color</option>
+            <option>Black</option>
+            <option>Grey</option>
+            <option>Purple</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Renossant Hoodie', 45)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <h2>Renossant Hat</h2>
+        <p>$20</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select style</option>
+            <option>Snapback</option>
+            <option>Beanie</option>
+          </select>
+          <select>
+            <option value="">Select color</option>
+            <option>Black</option>
+            <option>White</option>
+            <option>Purple</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Renossant Hat', 20)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <h2>Limited Poster</h2>
+        <p>$30</p>
+        <div class="selectors">
+          <select>
+            <option value="">Select version</option>
+            <option>High Beams</option>
+            <option>Studio Swiip</option>
+          </select>
+        </div>
+        <button onclick="addToCart('Limited Poster', 30)">Add to Cart</button>
+      </div>
     </div>
-    <button onclick="addToCart('Renossant T-Shirt', 25)">Add to Cart</button>
+
+    <div id="cart">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p><strong>Total: $<span id="total">0</span></strong></p>
+      <div id="cashapp-instructions" style="display:none;">
+        Send total to <strong>$YourCashtag</strong> on Cash App<br />
+        Include item names, sizes, and colors in the note ✉️
+      </div>
+      <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+      <button onclick="sendToGoogleForm()" style="margin-top: 20px;">
+        📬 Complete Order
+      </button>
+    </div>
   </div>
 
-  <!-- Cart Display -->
-  <div id="cart">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p><strong>Total: $<span id="total">0</span></strong></p>
-    <div id="cashapp-instructions" style="display:none;">
-      Send total to <strong>$YourCashtag</strong> on Cash App<br />
-      Include item names, sizes, and colors in the note ✉️
-    </div>
-    <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
-  </div>
+  <div id="popup">Item added to cart</div>
 
-  <!-- Cart Script -->
   <script>
     let total = 0;
     let cartItems = [];
 
     function addToCart(name, price) {
-      const size = document.getElementById('shirt-size').value;
-      const color = document.getElementById('shirt-color').value;
+      const selectors = event.target.parentElement.querySelectorAll('select');
+      const values = Array.from(selectors).map(sel => sel.value);
 
-      if (!size || !color) {
-        alert('Please select both size and color.');
+      if (values.includes("")) {
+        alert('Please make all selections.');
         return;
       }
 
-      const itemDescription = `${name} — ${color}, Size ${size} — $${price}`;
-      cartItems.push({ description: itemDescription, price: price });
-      total += price;
+      const itemDescription = `${name} — ${values.join(", ")}`;
+      const existing = cartItems.find(item => item.description === itemDescription);
 
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartItems.push({ description: itemDescription, price: price, quantity: 1 });
+      }
+
+      total += price;
       updateCart();
+      showPopup();
     }
 
     function updateCart() {
       const list = document.getElementById("cart-items");
       list.innerHTML = cartItems
-        .map(item => `<li>${item.description}</li>`)
+        .map(item => `<li>${item.description} — $${item.price} x${item.quantity}</li>`)
         .join('');
       document.getElementById("total").innerText = total;
       document.getElementById("cashapp-instructions").style.display = cartItems.length ? 'block' : 'none';
@@ -163,35 +255,33 @@
       total = 0;
       updateCart();
     }
-  </script>
-<!-- Google Forms Checkout Button -->
-<button onclick="sendToGoogleForm()" style="margin-top: 20px;">
-  📬 Complete Order
-</button>
 
-<script>
-  function sendToGoogleForm() {
-    if (cartItems.length === 0) {
-      alert("Your cart is empty!");
-      return;
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 1800);
     }
 
-    const cartList = cartItems.map(item => item.description).join('\n');
-    const totalText = "Total: $" + total;
-    const fullOrder = encodeURIComponent(`${cartList}\n${totalText}`);
+    function sendToGoogleForm() {
+      if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
 
-    // Your Google Form base URL
-    const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp5uXMBPtEP8dqF9DUV1zl6zKsetwEbseeicAFpnaPB_P_FQ/viewform";
+      const cartList = cartItems
+        .map(item => `${item.description} — $${item.price} x${item.quantity}`)
+        .join('\n');
+      const totalText = "Total: $" + total;
+      const fullOrder = encodeURIComponent(`${cartList}\n${totalText}`);
 
-    // Field ID for "Your Order" textarea
-    const orderFieldID = "entry.1269873545";
+      const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp5uXMBPtEP8dqF9DUV1zl6zKsetwEbseeicAFpnaPB_P_FQ/viewform";
+      const orderFieldID = "entry.1460322462";
 
-    // Final form URL with prefilled cart data
-    const formURL = `${baseURL}?${orderFieldID}=${fullOrder}`;
-
-    // Open in new tab
-    window.location.href = formURL;
-  }
-</script>
+      const formURL = `${baseURL}?${orderFieldID}=${fullOrder}`;
+      window.location.href = formURL;
+    }
+  </script>
 </body>
 </html>
