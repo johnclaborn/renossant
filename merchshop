@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <title>Renossant Merch</title>
   <style>
@@ -21,6 +22,7 @@
       color: #6d049e;
       text-align: center;
       margin-bottom: 40px;
+      font-weight: 600;
     }
 
     .shop-layout {
@@ -43,6 +45,7 @@
       padding: 20px;
       border-radius: 10px;
       width: 300px;
+      font-weight: 400;
       min-height: 460px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       display: flex;
@@ -127,21 +130,21 @@
   </style>
 </head>
 <body>
-  <h1>🛍️ Renossant Merch</h1>
+  <h1>Renossant Merch Shop</h1>
 
   <div class="shop-layout">
     <div class="product-list">
       <div class="item">
         <img src="https://via.placeholder.com/300x200?text=Product+Image" alt="Renossant Item" style="width: 100%; border-radius: 8px; margin-bottom: 12px;" />
         <h2>Renossant T-Shirt</h2>
-        <p>$25</p>
+        <p class="price-label">$<span class="price-display">25</span></p>
         <div class="selectors">
-          <select>
+          <select class="size-select" data-item="Renossant T-Shirt">
             <option value="">Select size</option>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
           </select>
           <select>
             <option value="">Select color</option>
@@ -150,7 +153,7 @@
             <option>Purple</option>
           </select>
         </div>
-        <button onclick="addToCart('Renossant T-Shirt', 25)">Add to Cart</button>
+        <button onclick="addToCart('Renossant T-Shirt')">Add to Cart</button>
       </div>
 
       <div class="item">
@@ -226,25 +229,38 @@
   <div id="popup">Item added to cart</div>
 
   <script>
+    const priceTable = {
+      "Renossant T-Shirt": {
+        S: 25,
+        M: 25,
+        L: 27,
+        XL: 28
+      }
+    };
+
     let total = 0;
     let cartItems = [];
 
-    function addToCart(name, price) {
-      const selectors = event.target.parentElement.querySelectorAll('select');
-      const values = Array.from(selectors).map(sel => sel.value);
+    function addToCart(name) {
+      const container = event.target.closest(".item");
+      const selects = container.querySelectorAll("select");
+      const values = Array.from(selects).map(s => s.value);
 
       if (values.includes("")) {
-        alert('Please make all selections.');
+        alert("Please make all selections.");
         return;
       }
 
-      const itemDescription = `${name} — ${values.join(", ")}`;
-      const existing = cartItems.find(item => item.description === itemDescription);
+      const size = values[0];
+      const price = priceTable[name]?.[size] ?? 0;
+
+      const description = `${name} — ${values.join(", ")}`;
+      const existing = cartItems.find(i => i.description === description);
 
       if (existing) {
         existing.quantity += 1;
       } else {
-        cartItems.push({ description: itemDescription, price: price, quantity: 1 });
+        cartItems.push({ description, price, quantity: 1 });
       }
 
       total += price;
@@ -270,9 +286,7 @@
     function showPopup() {
       const popup = document.getElementById("popup");
       popup.style.display = "block";
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 1800);
+      setTimeout(() => popup.style.display = "none", 1800);
     }
 
     function sendToGoogleForm() {
@@ -280,7 +294,6 @@
         alert("Your cart is empty!");
         return;
       }
-
       const cartList = cartItems
         .map(item => `${item.description} — $${item.price} x${item.quantity}`)
         .join('\n');
@@ -289,10 +302,20 @@
 
       const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp5uXMBPtEP8dqF9DUV1zl6zKsetwEbseeicAFpnaPB_P_FQ/viewform";
       const orderFieldID = "entry.1269873545";
-
       const formURL = `${baseURL}?${orderFieldID}=${fullOrder}`;
       window.location.href = formURL;
     }
+
+    // Live update price display on size change
+    document.querySelectorAll(".size-select").forEach(select => {
+      select.addEventListener("change", e => {
+        const name = e.target.dataset.item;
+        const size = e.target.value;
+        const price = priceTable[name]?.[size] ?? 0;
+        const container = e.target.closest(".item");
+        container.querySelector(".price-display").innerText = price;
+      });
+    });
   </script>
 </body>
 </html>
