@@ -288,7 +288,7 @@
       const fullOrder = encodeURIComponent(`${cartList}\n${totalText}`);
 
       const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp5uXMBPtEP8dqF9DUV1zl6zKsetwEbseeicAFpnaPB_P_FQ/viewform";
-      const orderFieldID = "entry.1460322462";
+      const orderFieldID = "entry.1269873545";
 
       const formURL = `${baseURL}?${orderFieldID}=${fullOrder}`;
       window.location.href = formURL;
