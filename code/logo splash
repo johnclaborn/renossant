@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Renossant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -69,7 +68,7 @@
 
   <img
     class="logo"
-    src="https://johnclaborn.github.io/renossant/new%20logo%20edit%202025.png"
+    src="https://johnclaborn.github.io/renossant/images/new%20logo%20edit%202025.png"
     alt="Renossant Logo"
 />
 
