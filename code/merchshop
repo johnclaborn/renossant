@@ -31,6 +31,9 @@
       gap: 40px;
       align-items: center;
     }
+    .price-label {
+      font-size: 1.30rem;
+    }
 
     .product-list {
       display: flex;
@@ -135,25 +138,31 @@
   <div class="shop-layout">
     <div class="product-list">
       <div class="item">
-        <img src="https://via.placeholder.com/300x200?text=Product+Image" alt="Renossant Item" style="width: 100%; border-radius: 8px; margin-bottom: 12px;" />
-        <h2>Renossant T-Shirt</h2>
-        <p class="price-label">$<span class="price-display">25</span></p>
+        <img src="https://johnclaborn.github.io/renossant/images/creator%20tee.png" alt="Renossant Creator Tee" style="width: 100%; border-radius: 8px; margin-bottom: 12px;" />
+        <h2>Renossant Creator Tee</h2>
+        <p class="price-label">$<span class="price-display">44</span></p>
         <div class="selectors">
-          <select class="size-select" data-item="Renossant T-Shirt">
+          <select class="size-select" data-item="Renossant Creator Tee">
             <option value="">Select size</option>
+            <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
             <option value="L">L</option>
             <option value="XL">XL</option>
+            <option value="2XL">2XL</option>
+            <option value="3XL">3XL</option>
+            <option value="4XL">4XL</option>
           </select>
           <select>
             <option value="">Select color</option>
             <option>Black</option>
             <option>White</option>
-            <option>Purple</option>
+            <option>Navy Blue</option>
+            <option>Dark Grey</option>
+            <option>Green</option>
           </select>
         </div>
-        <button onclick="addToCart('Renossant T-Shirt')">Add to Cart</button>
+        <button onclick="addToCart('Renossant Creator Tee')">Add to Cart</button>
       </div>
 
       <div class="item">
@@ -230,11 +239,15 @@
 
   <script>
     const priceTable = {
-      "Renossant T-Shirt": {
-        S: 25,
-        M: 25,
-        L: 27,
-        XL: 28
+      "Renossant Creator Tee": {
+        XS: 44,
+        S: 44,
+        M: 44,
+        L: 44,
+        XL: 44,
+        "2XL": 46,
+        "3XL": 48,
+        "4XL": 50
       }
     };
 
@@ -266,6 +279,7 @@
       total += price;
       updateCart();
       showPopup();
+      document.getElementById("cart").scrollIntoView({ behavior: "smooth" });
     }
 
     function updateCart() {
