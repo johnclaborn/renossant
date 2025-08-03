@@ -115,6 +115,8 @@
       font-family: 'Barlow Condensed', sans-serif;
       margin: 0;
       padding: 80px;
+      width: 100%;
+      align-items: center;
     }
 
     h1 {
@@ -155,6 +157,20 @@
       position: relative;
     }
 
+    .photo-strip-albums {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      gap: 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      opacity: 0;
+      transition: all 3s ease;
+      position: relative;
+    }
+
     .photo-strip img {
       width: 100%;
       max-width: 150px;
@@ -169,6 +185,16 @@
     .photo-strip2 img {
         width: 300px;
         height: 300px;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+    }
+
+    .photo-strip-albums img {
+        width: auto;
+        max-width: 300px;
+        max-height: 300px;
         overflow: hidden;
         justify-content: center;
         align-items: center;
@@ -251,7 +277,7 @@
     After dropping out of college in 2010, John went to work with local music labels and collaborators, continuing to make music, record, produce and mix. Fast forward to now and, after many hours in the studio, John has amassed an impressive list of clientele and credentials including: 
   </p>
 
-  <div class="photo-strip2 scroll-fade">
+  <div class="photo-strip-albums scroll-fade">
     <img src="images/sweetner.jpg">
     <img src="images/beatsaber.jpg">
     <img src="images/killermike.jpg">
