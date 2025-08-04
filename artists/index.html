@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Music and Film Production"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <title>Artists</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" 
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navigation bar.css">
+    <link rel="stylesheet" href="../css/copyright.css">
+    <link rel="stylesheet" href="../css/photo strip.css">
+    <link rel="stylesheet" href="../css/music cards.css">
+    <link rel="stylesheet" href="../css/merch shop.css">
+
+    <style>
+
+        .artits{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            gap: 60px;
+            width: 100%;
+        }
+
+        .artits img{
+            height: 280px;
+            width: 200px;
+            object-fit: cover;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .name{
+          font-size: 35px;
+          color: #6d049eff;
+          text-align: center;
+          width: 100%;
+        }
+
+        .description{
+          font-size: 20px;
+          font-weight: 100;
+          color: #4d4d4d;
+          text-align: center;
+          width: 200px;
+        }
+
+    
+
+    </style>
+
+  </head>
+
+  <body>
+    <header>
+
+
+        <!--navigation bar start-->
+        <nav aria-label="Main Navigation">
+            <div class="nav-brand">Renossant Inc.</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-links" id="nav-links">
+              <a href="../index.html">Home</a>
+              <a href="../artists">Artists</a>
+              <a href="../merch">Merch</a>
+              <a href="../about">About</a>
+          </div>
+        </nav>
+        <!--navigation bar end-->
+
+
+    </header>
+    <div class="page"> <!-- page start -->
+      <h1>Artits</h1>
+
+      <div class="artits">
+        <div class="artits-card">
+            <img src="../images/johnclaborn2.png">
+            <div class="name">John Claborn</div>
+            <div class="description">Music Producer / Vocal Designer</div>
+        </div>
+         <div class="artits-card">
+            <img src="../images/versy 2.png" style="object-position: right;">
+            <div class="name">Versy</div>
+            <div class="description">Artist / Songwriter / Music Producer</div>
+        </div>
+        <div class="artits-card">
+            <a href="../produkt">
+              <img src="../images/produkt13.png">
+            </a>
+            <div class="name">Main Produkt</div>
+            <div class="description">Artist / Music Producer</div>
+        </div>
+        <div class="artits-card">
+            <img src="../images/ckjones2.png">
+            <div class="name">CK Jones Music</div>
+            <div class="description">Artist / Music Producer / DJ</div>
+        </div>
+        <div class="artits-card">
+            <img src="">
+            <div class="name">King Sco</div>
+            <div class="description">Artist / Songwriter / Music Producer</div>
+        </div>
+        <div class="artits-card">
+            <img src="../images/jasmin.png">
+            <div class="name">Jasmin Rosaleen</div>
+            <div class="description">Artist / Songwriter</div>
+        </div>
+      </div>
+
+
+      <!--copyright start-->
+      <div class="copyright">Copyright © 2025</div>
+      <!--copyright end-->
+
+
+    </div> <!-- page end-->
+    
+    <script src="../js/navigation bar.js" defer></script>
+    <script src="../js/music cards.js" defer></script>
+    <script src="../js/merch shop.js" defer></script>
+
+  </body>
+</html>
