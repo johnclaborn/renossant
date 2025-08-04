@@ -20,7 +20,7 @@ cards.forEach((card, index) => {
                     otherAudio.pause();
                     otherCard.classList.remove('playing');
                     otherwrapper.classList.remove('playing');
-                    if (otherBtn) otherBtn.innerHTML = "&#9658;";
+                    if (otherBtn) otherBtn.innerHTML = '<i class="fas fa-play"></i>';
                 }
             });
             audio.play();
