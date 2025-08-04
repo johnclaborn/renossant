@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,235 +9,127 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+    >
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" 
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navigation bar.css">
+    <link rel="stylesheet" href="css/copyright.css">
+
     <style>
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+
+      .logo-box{
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       }
 
-      body {
-        margin: 0;
-        background: #ffffff;
-        font-family: 'Barlow Condensed', sans-serif;
-      }
-
-      /* NAV CONTAINER */
-      nav {
-        background-color: #ba9dc7;
-        position: absolute;
-        height: 30px;
-        width: 100%;
-        align-items: center;
-        padding: 15px 0px;
-      }
-
-      /* Renossant Inc */
-      .nav-brand {
-        color: #ffffff;
-        font-size: 1.5rem;
-        font-weight:lighter;
-        margin-left: 20px;
-      }
-
-      /* HAMBURGER ICON */
-      .menu-toggle {
-        position: absolute;
-        top: 12px;
-        right: 20px;
-        cursor: pointer;
-        display: block;
-        height: 20px;
-        width: 20px;
-      }
-
-      .menu-toggle div {
-        width: 100%;
-        height: 2px;
-        background-color: #ffffff;
-        margin: 7px 0;
-        transition: all 0.3s ease;
-      }
-
-      /* NAV LINKS */
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #ba9dc7;
-        padding: 20px;
-      }
-
-      .nav-links a {
-        color: #ffffff;
-        padding: 5px 10px;
-        text-decoration: none;
-        font-size: 1.1rem;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      /* DESKTOP STYLES */
-      @media (min-width: 768px) {
-        .menu-toggle {
-          display: none;
-        }
-
-        nav {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .nav-links {
-          display: flex !important;
-          flex-direction: row;
-          background: none;
-          padding: 30px;
-        }
-
-        .nav-links a {
-          margin-left: 30px;
-          font-size: 1rem;
-        }
-      }
-      
-      .page {
-        margin: 0;
-        background: #ffffff;
-        font-family: 'Barlow Condensed', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+      .logo {
+        width: 300px;
         height: auto;
-        padding-top: 125px;
-        overflow: hidden;
-        color: #aaa;
-        width: 100%;
-      }
-
-    .logo {
-      width: 300px;
-      height: auto;
-      opacity: 0;
-      transform: scale(0.3);
-      animation: fadeZoom 7s ease-out forwards, flicker 4s linear infinite;
-    }
-
-    .tagline {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 3px;
-      text-align: center;
-      opacity: 0;
-      animation: fadeInTag 2.4s ease-out forwards;
-      animation-delay: 3.1s;
-      color: #999999;
-    }
-
-    .copyright{
-      margin-top: 70px;
-      font-weight: 100;
-      letter-spacing: 1px;
-      opacity: 0;
-      animation: fadeInTag 2.4s ease-out forwards;
-      animation-delay: 6s;
-    }
-
-    @keyframes fadeZoom {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes fadeInTag {
-      0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: scale(0.3);
+        animation: fadeZoom 7s ease-out forwards, flicker 4s linear infinite;
       }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
+
+      .tagline {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInTag 2.4s ease-out forwards;
+        animation-delay: 3.1s;
+        color: #999999;
       }
-    }
 
-    @keyframes flicker {
-  0%   { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-  3%   { opacity: 0.4; filter: none; }
-  6%   { opacity: 0.9; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-  8%   { opacity: 0.2; filter: none; }
-  10%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-  13%  { opacity: 0.3; filter: none; }
-  16%  { opacity: 0.8; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-  20%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-  25%  { opacity: 0.1; filter: none; }
-  30%  { opacity: 0.9; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-  38%  { opacity: 0.2; filter: none; }
-  45%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-  60%  { opacity: 1; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-  80%  { opacity: 0.9; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-  100% { opacity: 1; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-}
-  </style>
-</head>
-<body>
+      @keyframes fadeZoom {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
-  <header>
-  <nav role="navigation" aria-label="Main Navigation">
-    <div class="nav-brand">Renossant Inc.</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
+      @keyframes fadeInTag {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes flicker {
+        0%   { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
+        3%   { opacity: 0.4; filter: none; }
+        6%   { opacity: 0.9; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
+        8%   { opacity: 0.2; filter: none; }
+        10%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
+        13%  { opacity: 0.3; filter: none; }
+        16%  { opacity: 0.8; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
+        20%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
+        25%  { opacity: 0.1; filter: none; }
+        30%  { opacity: 0.9; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
+        38%  { opacity: 0.2; filter: none; }
+        45%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
+        60%  { opacity: 1; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
+        80%  { opacity: 0.9; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
+        100% { opacity: 1; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
+      }
+    </style>
+  </head>
+
+
+  <body>
+
+    <header>
+
+
+              <!--navigation bar start-->
+              <nav aria-label="Main Navigation">
+                  <div class="nav-brand">Renossant Inc.</div>
+                  <div class="menu-toggle" id="menu-toggle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                  </div>
+                  <div class="nav-links" id="nav-links">
+                      <a href="">Home</a>
+                      <a href="produkt">Produkt</a>
+                      <a href="merch">Merch</a>
+                      <a href="about">About</a>
+                  </div>
+              </nav>
+              <!--navigation bar end-->
+
+
+    </header>
+
+    <div class="page">
+        <div class="logo-box">
+          <img class="logo" src="renossant.png" alt="Renossant Logo"/>
+        </div>
+      <div class="tagline">Music and Film Production</div>
+
+
+      <!--copyright start-->
+      <div class="copyright" style="opacity: 0; animation: fadeInTag 2.4s ease-out forwards; animation-delay: 6s;">
+          Copyright © 2025
+      </div>
+      <!--copyright end-->
+
+      
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="">Home</a>
-      <a href="merch">Merch</a>
-      <a href="about">About</a>
-    </div>
-  </nav>
-  </header>
 
-  <div class="page">
+   <script src="js/navigation bar.js" defer></script>
 
-  <img
-    class="logo"
-    src="images/renossant.png"
-    alt="Renossant Logo"
-/>
-
-  <div class="tagline">Music and Film Production</div>
-  <div class="copyright">Copyright © 2025</div>
-
-</div>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const links = document.querySelectorAll('.nav-links a');
-
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  /* close menu when link clicked */
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
-        navLinks.classList.remove('active');
-      }
-    });
-  });
-  </script>
-
-</body>
+  </body>
 </html>

@@ -1,266 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Music and Film Production" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>Merch Shop</title>
+    <meta name="description" content="Music and Film Production"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <title>Renossant Inc.</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+    >
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" 
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navigation bar.css">
+    <link rel="stylesheet" href="../css/copyright.css">
+    <link rel="stylesheet" href="../css/photo strip.css">
+    <link rel="stylesheet" href="../css/music cards.css">
+    <link rel="stylesheet" href="../css/merch shop.css">
+
     <style>
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      body {
-        margin: 0;
-        background: #ffffff;
-        font-family: 'Barlow Condensed', sans-serif;
-      }
-
-      /* NAV CONTAINER */
-      nav {
-        background-color: #ba9dc7;
-        position: absolute;
-        height: 30px;
-        width: 100%;
-        align-items: center;
-        padding: 15px 0px;
-      }
-
-      /* Renossant Inc */
-      .nav-brand {
-        color: #ffffff;
-        font-size: 1.5rem;
-        font-weight:lighter;
-        margin-left: 20px;
-      }
-
-      /* HAMBURGER ICON */
-      .menu-toggle {
-        position: absolute;
-        top: 12px;
-        right: 20px;
-        cursor: pointer;
-        display: block;
-        height: 20px;
-        width: 20px;
-      }
-
-      .menu-toggle div {
-        width: 100%;
-        height: 2px;
-        background-color: #ffffff;
-        margin: 7px 0;
-        transition: all 0.3s ease;
-      }
-
-      /* NAV LINKS */
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #ba9dc7;
-        padding: 20px;
-      }
-
-      .nav-links a {
-        color: #ffffff;
-        padding: 5px 10px;
-        text-decoration: none;
-        font-size: 1.1rem;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      /* DESKTOP STYLES */
-      @media (min-width: 768px) {
-        .menu-toggle {
-          display: none;
-        }
-
-        nav {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .nav-links {
-          display: flex !important;
-          flex-direction: row;
-          background: none;
-          padding: 30px;
-        }
-
-        .nav-links a {
-          margin-left: 30px;
-          font-size: 1rem;
-        }
-      }
-      .page {
-      background: #ffffff;
-      color: #111;
-      font-family: 'Barlow Condensed', sans-serif;
-      padding: 40px;
-      margin: 0;
-      overflow-x: hidden;
-    }
-    h1 {
-          text-align: center;
-          color: #6d049eff;
-          margin-bottom: 40px;
-          font-weight: 500;
-        }
-
-    .shop-layout {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      align-items: center;
-    }
-    .price-label {
-      font-size: 1.30rem;
-    }
-
-    .product-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .item {
-      background: #f5f5f5;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      font-weight: 400;
-      min-height: 460px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .item img {
-        width: 100%;
-        height: 300px; /* or whatever height you want */
-        object-fit: cover; /* ensures image fills container and crops if needed */
-        border-radius: 8px;
-        margin-bottom: 12px;
-    }
-
-    .item h2 {
-      margin: 10px 0;
-    }
-
-    .selectors {
-      margin: 10px 0;
-    }
-
-    select {
-      padding: 6px 10px;
-      margin: 4px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background: #6d049e;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background: #4a0273;
-    }
-
-    #cart {
-      background: #f0f0f0;
-      padding: 20px;
-      border-radius: 10px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    #cart ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px;
-      text-align: left;
-    }
-
-    #cashapp-instructions {
-      font-size: 1.1rem;
-      color: #444;
-      margin-top: 20px;
-    }
-
-    .clear-btn {
-      background: #999;
-      margin-top: 10px;
-    }
-
-    .clear-btn:hover {
-      background: #777;
-    }
-
-    #popup {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #6d049e;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      display: none;
-      z-index: 1000;
-    }
     </style>
   </head>
   <body>
     <header>
-      <nav role="navigation" aria-label="Main Navigation">
+
+
+      <!--navigation bar start-->
+      <nav aria-label="Main Navigation">
         <div class="nav-brand">Renossant Inc.</div>
         <div class="menu-toggle" id="menu-toggle">
-          <div></div>
-          <div></div>
-          <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-          <div class="nav-links" id="nav-links">
+        <div class="nav-links" id="nav-links">
             <a href="../index.html">Home</a>
+            <a href="../produkt">Produkt</a>
             <a href="">Merch</a>
             <a href="../about">About</a>
-          </div>
+        </div>
       </nav>
+      <!--navigation bar end-->
+
+
     </header>
+
     <div class="page">
+
       <h1>Merch Shop</h1>
 
+
+  <!-- merch shop start -->
   <div class="shop-layout">
     <div class="product-list">
+
+      <!-- item start -->
       <div class="item">
-        <img src="images/creatortee.png" alt="Renossant Creator Tee" />
+        <img src="images/creatortee.png"/>
         <h2>Renossant Creator Tee</h2>
         <p class="price-label">$<span class="price-display">44</span></p>
         <div class="selectors">
@@ -286,8 +86,10 @@
         </div>
         <button onclick="addToCart('Renossant Creator Tee')">Add to Cart</button>
       </div>
+      <!-- item end -->
 
-     <div class="item">
+      <!-- item start -->
+      <div class="item">
         <img src="images/freestyletank.png" alt="Renossant Freestyle Tank"/>
         <h2>Renossant Freestyle Tank</h2>
         <p class="price-label">$<span class="price-display">45</span></p>
@@ -307,7 +109,9 @@
         </div>
         <button onclick="addToCart('Renossant Freestyle Tank')">Add to Cart</button>
       </div>
+      <!-- item end -->
 
+      <!-- item start -->
       <div class="item">
         <img src="images/riftashirt.png" alt="RIFTA Shirt"/>
         <h2>RIFTA Shirt</h2>
@@ -327,7 +131,9 @@
         </div>
         <button onclick="addToCart('RIFTA Shirt')">Add to Cart</button>
       </div>
+      <!-- item end -->
 
+      <!-- item start -->
       <div class="item">
         <img src="images/huckleberryshirt.png" alt="The Huckleberry Show Lawmans Shirt" />
         <h2>The Huckleberry Show Lawmans Shirt</h2>
@@ -347,6 +153,9 @@
         </div>
         <button onclick="addToCart('The Huckleberry Show Lawmans Shirt')">Add to Cart</button>
       </div>
+      <!-- item end -->
+
+      <!-- item start -->
       <div class="item">
         <img src="images/creativecap.png" alt="Renossant Creative Cap" style="object-position: top" />
         <h2>Renossant Creative Cap</h2>
@@ -361,6 +170,9 @@
         </div>
         <button onclick="addToCart('Renossant Creative Cap')">Add to Cart</button>
       </div>
+      <!-- item end -->
+
+      <!-- item start -->
       <div class="item">
         <img src="images/builderbeanie.png" alt="Renossant Builders Beanie" style="object-position: top" />
         <h2>Renossant Builders Beanie</h2>
@@ -376,6 +188,9 @@
         </div>
         <button onclick="addToCart('Renossant Builders Beanie')">Add to Cart</button>
       </div>
+      <!-- item end -->
+
+      <!-- item start -->
       <div class="item">
         <img src="images/riftacoffeemug.png" alt="RIFTA Coffee Mug"/>
         <h2>RIFTA Coffee Mug</h2>
@@ -389,7 +204,9 @@
         <button onclick="addToCart('The Huckleberry Show Mug', 17)">Add to Cart</button>
       </div>
     </div>
+    <!-- item end -->
 
+    <!-- cart start -->
     <div id="cart">
       <h2>Your Cart</h2>
       <ul id="cart-items"></ul>
@@ -406,159 +223,21 @@
   </div>
 
   <div id="popup">Item added to cart</div>
+  <!-- cart end -->
+   
+  <!-- merch shop end-->
+
+
+      <!--copyright start-->
+      <div class="copyright">Copyright © 2025</div>
+      <!--copyright end-->
+
     </div>
-    <script>
-      const toggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      const links = document.querySelectorAll('.nav-links a');
-      
-      /* open menu */
-      toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-      /* close menu when link clicked */
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth < 768) {
-            navLinks.classList.remove('active');
-          }
-        });
-      });
-      const priceTable = {
-      "Renossant Creator Tee": {
-        XS: 44,
-        S: 44,
-        M: 44,
-        L: 44,
-        XL: 44,
-        "2XL": 46,
-        "3XL": 48,
-        "4XL": 50
-      },
-      "Renossant Freestyle Tank": {
-        XS: 45,
-        S: 45,
-        M: 45,
-        L: 45,
-        XL: 45,
-      },
-      "RIFTA Shirt": {
-        XS: 44,
-        S: 44,
-        M: 44,
-        L: 44,
-        XL: 44,
-        "2XL": 46,
-        "3XL": 48,
-        "4XL": 50
-      },
-      "The Huckleberry Show Lawmans Shirt": {
-        XS: 44,
-        S: 44,
-        M: 44,
-        L: 44,
-        XL: 44,
-        "2XL": 46,
-        "3XL": 48,
-        "4XL": 50
-      },
-      "Renossant Creative Cap": {
-        Black: 50,
-        Silver: 50,
-        Red: 50,
-      },
-      "Renossant Builders Beanie": {
-        Black: 45,
-        White: 45,
-        Blue: 45,
-        Red: 45,
-      },
-      "RIFTA Coffee Mug": {
-        default: 17
-      },
-      "The Huckleberry Show Mug": {
-        default: 17
-      }
-    };
 
-    let total = 0;
-    let cartItems = [];
+    
+    <script src="../js/navigation bar.js" defer></script>
+    <script src="../js/music cards.js" defer></script>
+    <script src="../js/merch shop.js" defer></script>
 
-    function addToCart(name) {
-      const container = event.target.closest(".item");
-      const selects = container.querySelectorAll("select");
-      const values = Array.from(selects).map(s => s.value);
-
-      if (values.includes("")) {
-        alert("Please make all selections.");
-        return;
-      }
-
-      const size = values[0];
-      const price = priceTable[name]?.[size || "default"] ?? passedPrice ?? 0;
-
-      const description = `${name} — ${values.join(", ")}`;
-      const existing = cartItems.find(i => i.description === description);
-
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cartItems.push({ description, price, quantity: 1 });
-      }
-
-      total += price;
-      updateCart();
-      showPopup();
-    }
-
-    function updateCart() {
-      const list = document.getElementById("cart-items");
-      list.innerHTML = cartItems
-        .map(item => `<li>${item.description} — $${item.price} x${item.quantity}</li>`)
-        .join('');
-      document.getElementById("total").innerText = total;
-      document.getElementById("cashapp-instructions").style.display = cartItems.length ? 'block' : 'none';
-    }
-
-    function clearCart() {
-      cartItems = [];
-      total = 0;
-      updateCart();
-    }
-
-    function showPopup() {
-      const popup = document.getElementById("popup");
-      popup.style.display = "block";
-      setTimeout(() => popup.style.display = "none", 1800);
-    }
-
-    function sendToGoogleForm() {
-      if (cartItems.length === 0) {
-        alert("Your cart is empty!");
-        return;
-      }
-      const cartList = cartItems
-        .map(item => `${item.description} — $${item.price} x${item.quantity}`)
-        .join('\n');
-      const totalText = "Total: $" + total;
-      const fullOrder = encodeURIComponent(`${cartList}\n${totalText}`);
-
-      const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp5uXMBPtEP8dqF9DUV1zl6zKsetwEbseeicAFpnaPB_P_FQ/viewform";
-      const orderFieldID = "entry.1269873545";
-      const formURL = `${baseURL}?${orderFieldID}=${fullOrder}`;
-      window.location.href = formURL;
-    }
-
-    // Live update price display on size change
-    document.querySelectorAll(".size-select").forEach(select => {
-      select.addEventListener("change", e => {
-        const name = e.target.dataset.item;
-        const size = e.target.value;
-        const price = priceTable[name]?.[size] ?? 0;
-        const container = e.target.closest(".item");
-        container.querySelector(".price-display").innerText = price;
-      });
-    });
-    </script>
   </body>
 </html>

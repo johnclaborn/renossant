@@ -1,0 +1,30 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.page {
+    margin: 0;
+    background: #ffffff;
+    font-family: 'Barlow Condensed', sans-serif;
+    height: auto;
+    padding-top: 80px;
+    overflow: hidden;
+    color: #aaa;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #6d049eff;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+ 

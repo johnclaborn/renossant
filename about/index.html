@@ -1,250 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Music and Film Production" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>About</title>
+    <meta name="description" content="Music and Film Production"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <title>Renossant Inc.</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+    >
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" 
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navigation bar.css">
+    <link rel="stylesheet" href="../css/copyright.css">
+
     <style>
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      body {
-        margin: 0;
-        background: #ffffff;
-        font-family: 'Barlow Condensed', sans-serif;
-      }
-
-      /* NAV CONTAINER */
-      nav {
-        background-color: #ba9dc7;
-        position: absolute;
-        height: 30px;
-        width: 100%;
-        align-items: center;
-        padding: 15px 0px;
-      }
-
-      /* Renossant Inc */
-      .nav-brand {
-        color: #ffffff;
-        font-size: 1.5rem;
-        font-weight:lighter;
-        margin-left: 20px;
-      }
-
-      /* HAMBURGER ICON */
-      .menu-toggle {
-        position: absolute;
-        top: 12px;
-        right: 20px;
-        cursor: pointer;
-        display: block;
-        height: 20px;
-        width: 20px;
-      }
-
-      .menu-toggle div {
-        width: 100%;
-        height: 2px;
-        background-color: #ffffff;
-        margin: 7px 0;
-        transition: all 0.3s ease;
-      }
-
-      /* NAV LINKS */
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #ba9dc7;
-        padding: 20px;
-      }
-
-      .nav-links a {
-        color: #ffffff;
-        padding: 5px 10px;
-        text-decoration: none;
-        font-size: 1.1rem;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-
-      .nav-links.active {
+    
+      .photo-strip {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        opacity: 0;
+        transition: all 3s ease;
+        position: relative;
       }
 
-      /* DESKTOP STYLES */
-      @media (min-width: 768px) {
-        .menu-toggle {
-          display: none;
-        }
+      .photo-strip2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        opacity: 0;
+        transition: all 3s ease;
+        position: relative;
+      }
 
-        nav {
-          display: flex;
+      .photo-strip-albums {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        opacity: 0;
+        transition: all 3s ease;
+        position: relative;
+      }
+
+      .photo-strip img {
+        width: 100%;
+        max-width: 150px;
+        height: 100%;
+        max-height: 150px;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+      }
+
+      .photo-strip2 img {
+          width: 300px;
+          height: 300px;
+          overflow: hidden;
+          justify-content: center;
           align-items: center;
-          justify-content: space-between;
-        }
-
-        .nav-links {
-          display: flex !important;
-          flex-direction: row;
-          background: none;
-          padding: 30px;
-        }
-
-        .nav-links a {
-          margin-left: 30px;
-          font-size: 1rem;
-        }
-        
+          object-fit: cover;
       }
-      
-      .page {
-      background: #ffffff;
-      color: #000000;
-      font-family: 'Barlow Condensed', sans-serif;
-      margin: 0;
-      padding-top: 80px;
-      width: 100%;
-    }
 
-    h1 {
-      text-align: center;
-      color: #6d049eff;
-      margin-bottom: 40px;
-      font-weight: 500;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.6s ease;
-    }
+      .photo-strip-albums img {
+          width: auto;
+          max-width: 300px;
+          max-height: 300px;
+          overflow: hidden;
+          justify-content: center;
+          align-items: center;
+          object-fit: cover;
+      }
 
-    .photo-strip {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      gap: 20px;
-      width: 100%;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-      opacity: 0;
-      transition: all 3s ease;
-      position: relative;
-    }
+      .description, .animated-paragraph {
+        max-width: 600px;
+        margin: 0 auto 20px;
+        line-height: 1.6;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 2s ease;
+      }
 
-    .photo-strip2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      gap: 20px;
-      width: 100%;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-      opacity: 0;
-      transition: all 3s ease;
-      position: relative;
-    }
+      .description {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #333;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
 
-    .photo-strip-albums {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      gap: 20px;
-      width: 100%;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-      opacity: 0;
-      transition: all 3s ease;
-      position: relative;
-    }
+      .animated-paragraph {
+        font-size: 1.1rem;
+        color: #333;
+      }
 
-    .photo-strip img {
-      width: 100%;
-      max-width: 150px;
-      height: 100%;
-      max-height: 150px;
-      overflow: hidden;
-      justify-content: center;
-      align-items: center;
-      object-fit: cover;
-    }
+      /* Show on scroll */
+      .in-view {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
 
-    .photo-strip2 img {
-        width: 300px;
-        height: 300px;
-        overflow: hidden;
-        justify-content: center;
-        align-items: center;
-        object-fit: cover;
-    }
+  </head>
 
-    .photo-strip-albums img {
-        width: auto;
-        max-width: 300px;
-        max-height: 300px;
-        overflow: hidden;
-        justify-content: center;
-        align-items: center;
-        object-fit: cover;
-    }
-
-    .description, .animated-paragraph {
-      max-width: 600px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 2s ease;
-    }
-
-    .description {
-      font-size: 1.2rem;
-      color: #333;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .animated-paragraph {
-      font-size: 1.1rem;
-      color: #333;
-    }
-
-    /* Show on scroll */
-    .in-view {
-      opacity: 1 !important;
-      transform: none !important;
-    }
-  </style>
-</head>
 <body>
 
   <header>
-  <nav role="navigation" aria-label="Main Navigation">
-    <div class="nav-brand">Renossant Inc.</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="nav-links" id="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../merch">Merch</a>
-      <a href="">About</a>
-    </div>
-  </nav>
+
+
+    <!--navigation bar start-->
+    <nav aria-label="Main Navigation">
+        <div class="nav-brand">Renossant Inc.</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../produkt">Produkt</a>
+            <a href="../merch">Merch</a>
+            <a href="">About</a>
+        </div>
+    </nav>
+    <!--navigation bar end-->
+
+
   </header>
 
   <div class="page">
@@ -252,7 +154,7 @@
   <h1 class="scroll-fade">About</h1>
 
   <div class="photo-strip scroll-fade">
-    <img src="images/renossant.png">
+    <img src="../renossant.png">
   </div>
 
   <p class="description scroll-fade">
@@ -330,24 +232,13 @@
     <p class="description scroll-fade">
         Nike Basketball short "Bring Your Game"-over 10 million original views
     </p>
-    <div style="height: 200px;"></div>
+     <div class="copyright">Copyright © 2025</div>
+  </div>
+
+  <script src="../js/navigation bar.js" defer></script>
 
   <script>
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const links = document.querySelectorAll('.nav-links a');
-
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  /* close menu when link clicked */
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
-        navLinks.classList.remove('active');
-      }
-    });
-  });
+    
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -361,6 +252,7 @@
   });
 
   document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
+
   </script>
 
 </body>

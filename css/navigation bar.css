@@ -1,0 +1,81 @@
+/* navigation bar start */
+nav { /* navigation bar */
+    background-color: #ba9dc7;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+.nav-brand { /* navigation bar */
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight:lighter;
+    margin-left: 20px;
+}
+
+.menu-toggle { /* navigation bar */
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+
+.menu-toggle div { /* navigation bar */
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 7px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links { /* navigation bar */
+    display: none;
+    flex-direction: column;
+    background-color: #ba9dc7;
+    padding: 20px;
+}
+
+.nav-links a { /* navigation bar */
+    color: #ffffff;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover { /* navigation bar */
+    text-decoration: underline;
+}
+
+.nav-links.active { /* navigation bar */
+    display: flex;
+}
+
+@media (min-width: 768px) { /* navigation bar */
+    .menu-toggle {
+    display: none;
+    }
+
+    nav { /* navigation bar */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-links { /* navigation bar */
+        display: flex !important;
+        flex-direction: row;
+        background: none;
+        padding: 30px;
+    }
+
+    .nav-links a { /* navigation bar */
+        margin-left: 30px;
+        font-size: 1rem;
+    }
+}
+/* navigation bar end */
