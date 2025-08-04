@@ -19,9 +19,22 @@
     <link rel="stylesheet" href="css/copyright.css">
 
     <style>
+      .page{
+        position:relative;
+        overflow:hidden;
+        background:transparent;
+        height: 100%;
+        padding:0;
+      }
 
+      .copyright{
+        font-size: 30px;
+        font-weight: 500;
+        z-index: 3;
+        color: black;
+      }
       .logo-box{
-      padding-top: 60px;
+      padding-top: 120px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,6 +43,7 @@
 
       .logo {
         width: 300px;
+        z-index: 3;
         height: auto;
         opacity: 0;
         transform: scale(0.3);
@@ -38,14 +52,15 @@
 
       .tagline {
         margin-top: 20px;
-        font-size: 1.2rem;
+        font-size: 2.1rem;
+        z-index: 3;
         font-weight: 300;
         letter-spacing: 3px;
         text-align: center;
         opacity: 0;
         animation: fadeInTag 2.4s ease-out forwards;
         animation-delay: 3.1s;
-        color: #999999;
+        color: black;
       }
 
       @keyframes fadeZoom {
@@ -83,6 +98,17 @@
         80%  { opacity: 0.9; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
         100% { opacity: 1; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
       }
+
+      .background-image {
+  background-image: url('images/ckjones3.png');
+  background-size: cover;
+  background-position: top;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  height: 120%; /* bigger than container for parallax room */
+  z-index: 2;
+}
     </style>
   </head>
 
@@ -119,6 +145,7 @@
     </header>
 
     <div class="page">
+      <div class="background-image" id="bg"></div>
         <div class="logo-box">
           <img class="logo" src="images/renossant.png" alt="Renossant Logo"/>
         </div>
@@ -134,7 +161,16 @@
       
     </div>
 
+    <div></div>
+
    <script src="js/navigation bar.js" defer></script>
+   <script>
+      window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  document.getElementById('bg').style.transform = `translateY(${scrolled * .75}px)`;
+});
+
+    </script>
 
   </body>
 </html>
