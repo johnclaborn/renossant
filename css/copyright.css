@@ -7,3 +7,13 @@
   letter-spacing: 1px;
 }
 /* copyright end */
+
+.copyright-lobby{
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 200px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  z-index: 3;
+  color: black;
+}

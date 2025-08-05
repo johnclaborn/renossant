@@ -14,127 +14,41 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" 
       rel="stylesheet"
     >
+    <link rel="stylesheet" href="css/paralax-bg.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/navigation bar.css">
+    <link rel="stylesheet" href="css/navigation-bar.css">
     <link rel="stylesheet" href="css/copyright.css">
-    <link rel="stylesheet" href="css/music cards.css">
-
+    <link rel="stylesheet" href="css/music-cards.css">
+    <link rel="stylesheet" href="css/lobby-logo.css">
+    
     <style>
-
-      .copyright{
-        font-weight: 500;
-        z-index: 3;
-        color: black;
-      }
-      
-      .logo-box{
-      padding-top: 120px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      }
-
-      .logo {
-        width: 160px;
-        z-index: 3;
-        height: auto;
-        opacity: 0;
-        transform: scale(0.3);
-        animation: fadeZoom 7s ease-out forwards, flicker 4s linear infinite;
-      }
-
-      .tagline {
-        margin-top: 20px;
-        font-size: 20px;
-        z-index: 3;
-        font-weight: 300;
-        letter-spacing: 3px;
-        text-align: center;
-        opacity: 0;
-        animation: fadeInTag 2.4s ease-out forwards;
-        animation-delay: 3.1s;
-        color: black;
-      }
-
-      @keyframes fadeZoom {
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      @keyframes fadeInTag {
-        0% {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes flicker {
-        0%   { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-        3%   { opacity: 0.4; filter: none; }
-        6%   { opacity: 0.9; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-        8%   { opacity: 0.2; filter: none; }
-        10%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-        13%  { opacity: 0.3; filter: none; }
-        16%  { opacity: 0.8; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-        20%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-        25%  { opacity: 0.1; filter: none; }
-        30%  { opacity: 0.9; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-        38%  { opacity: 0.2; filter: none; }
-        45%  { opacity: 1; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-        60%  { opacity: 1; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-        80%  { opacity: 0.9; filter: drop-shadow(0 0 1px rgb(255, 144, 255)); }
-        100% { opacity: 1; filter: drop-shadow(0 0 5px rgb(255, 144, 255)); }
-      }
-
-      .background-image {
-        background-image: url('images/ckjones3.png');
-        background-size: cover;
-        background-position: 40%;
-        position: absolute;
-        width: 100%;
-        margin: 0;
-        height: 120%; /* bigger than container for parallax room */
-        z-index: 0;
-      }
 
     </style>
   </head>
-
 
   <body>
 
     <header>
 
-
               
-   <!--navigation bar start-->
-<nav aria-label="Main Navigation">
-    <div class="nav-brand">Renossant.com</div>
-    <div class="menu-toggle" id="menu-toggle">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="nav-links" id="nav-links">
-        <a href="">Lobby</a>
-        <a href="">Featured</a>
-        <a href="artists">Artists</a>
-        <a href="">Publishing</a>
-        <a href="merch">Merch</a>
-        <a href="about">About</a>
-        <a href="">Connect</a>
+      <!--navigation bar start-->
+      <nav aria-label="Main Navigation">
+          <div class="nav-brand">Renossant.com</div>
+          <div class="menu-toggle" id="menu-toggle">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="nav-links" id="nav-links">
+              <a href="">Lobby</a>
+              <a href="artists">Artists</a>
+              <a href="merch">Merch</a>
+              <a href="about">About</a>
 
-    </div>
-</nav>
-<!--navigation bar end-->
+          </div>
+      </nav>
+      <!--navigation bar end-->
 
 
     </header>
@@ -148,7 +62,7 @@
 
 
       <!--copyright start-->
-      <div class="copyright" style="opacity: 0; animation: fadeInTag 2.4s ease-out forwards; animation-delay: 6s;">
+      <div class="copyright-lobby" style="opacity: 0; animation: fadeInTag 2.4s ease-out forwards; animation-delay: 6s;">
           Copyright © 2025
       </div>
       <!--copyright end-->
@@ -157,55 +71,47 @@
       <div style="height: 600px"></div>
 
       <!--playlist-2 start-->
-<div class="playlist2"> 
+      <div class="playlist2"> 
 
 
-    <div class="audio-card-mini"> <!--audio-card-mini start-->
-        <div class="mini-wrapper-left">
-            <img class="album-art-mini" src="images/ckjones5.png"> <!--link album art-->
-            <audio src="music/CK Jones - NO MAMES 2020 - 09 Sneaky.mp3"></audio> <!--link mp3-->
-        </div>
-        <div class="mini-wrapper-right">
-            <div class="track-text">
-                <div class="artist">CK Jones Music</div>
-                <div class="title">Sneaky</div>
-                <div class="title2">NO MAMES 2020</div>
-            </div>
-            <div class="progress-container">   
-                <div class="progress-bar"></div>
-            </div>
-            <div class="time-wrapper">
-                <button class="restart-btn"><i class="fas fa-step-backward"></i></button>
-                <div class="play-btn-box2">
-                    <div class="play-btn-wrapper">
-                        <button class="play-btn"><i class="fas fa-play"></i></button>
-                    </div>
-                </div> 
-                <span class="time-display">0:00 / 0:00</span>
-            </div>
-        </div>
-    </div> <!--audio-card-mini end-->
+          <div class="audio-card-mini"> <!--audio-card-mini start-->
+              <div class="mini-wrapper-left">
+                  <img class="album-art-mini" src="images/ckjones5.png"> <!--link album art-->
+                  <audio src="music/CK Jones - NO MAMES 2020 - 09 Sneaky.mp3"></audio> <!--link mp3-->
+              </div>
+              <div class="mini-wrapper-right">
+                  <div class="track-text">
+                      <div class="artist">CK Jones Music</div>
+                      <div class="title">Sneaky</div>
+                      <div class="title2">NO MAMES 2020</div>
+                  </div>
+                  <div class="progress-container">   
+                      <div class="progress-bar"></div>
+                  </div>
+                  <div class="time-wrapper">
+                      <button class="restart-btn"><i class="fas fa-step-backward"></i></button>
+                      <div class="play-btn-box2">
+                          <div class="play-btn-wrapper">
+                              <button class="play-btn"><i class="fas fa-play"></i></button>
+                          </div>
+                      </div> 
+                      <span class="time-display">0:00 / 0:00</span>
+                  </div>
+              </div>
+          </div> <!--audio-card-mini end-->
 
 
-</div> 
-<!--playlist2 end--> 
+      </div> 
+      <!--playlist2 end--> 
       
     </div>
 
-
-   <script src="js/navigation bar.js" defer></script>
-   <script src="js/music cards.js" defer></script>
+    <script src="js/navigation-bar.js" defer></script>
+    <script src="js/music-cards.js" defer></script>
+    <script src="js/paralax-bg.js" defer></script>
    
    <script>
-      window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY;
-  document.getElementById('bg').style.transform = `translateY(${scrolled * .75}px)`;
-});
-
-
-    
-
-  
+      
     </script>
 
   </body>
