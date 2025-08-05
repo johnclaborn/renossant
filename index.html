@@ -210,28 +210,7 @@
 });
 
 
-    const audio = document.getElementById('audio');
-
-  if ('mediaSession' in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: 'Your Song Title',
-      artist: 'Artist Name',
-      album: 'Album Name',
-      artwork: [
-        { src: 'cover.jpg', sizes: '512x512', type: 'image/jpeg' }
-      ]
-    });
-
-    // Optional: media controls on lock screen
-    navigator.mediaSession.setActionHandler('play', () => audio.play());
-    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
-    navigator.mediaSession.setActionHandler('previoustrack', () => {
-      console.log('Previous track');
-    });
-    navigator.mediaSession.setActionHandler('nexttrack', () => {
-      console.log('Next track');
-    });
-  }
+    
 
   
     </script>
