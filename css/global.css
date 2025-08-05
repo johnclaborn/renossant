@@ -15,10 +15,10 @@ body {
     background: #ffffff;
     font-family: 'Barlow Condensed', sans-serif;
     height: auto;
-    padding-top: 80px;
     overflow: hidden;
     color: #aaa;
     width: 100%;
+    position: relative;
 }
 
 h1 {
