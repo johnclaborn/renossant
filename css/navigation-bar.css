@@ -44,7 +44,7 @@ nav { /* navigation bar */
     color: #ffffff;
     padding: 5px 10px;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 30px;
 }
 
 .nav-links a:hover { /* navigation bar */
