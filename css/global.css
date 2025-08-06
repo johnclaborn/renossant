@@ -28,4 +28,20 @@ h1 {
     font-weight: 500;
     padding-top: 60px;
 }
+
+h2{
+    letter-spacing: 3px;
+    padding: 12px;
+    text-align: center;
+}
+
+#email{
+    font-size: 25px;
+    letter-spacing: 3px;
+
+}
+
+#social-icons{
+    height: 35px;
+}
  
