@@ -94,6 +94,7 @@ html{
     object-fit: cover;
     overflow: hidden;
     position: relative;
+    border-radius: 16px;
     }
 
     .artist-name{
