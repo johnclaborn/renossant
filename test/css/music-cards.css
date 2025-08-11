@@ -37,7 +37,7 @@
     font-size: 25px;
     font-weight: 600;
     left: 40px;
-    z-index: 3;
+    z-index: 0;
 }
 
 .hot-tag{
@@ -47,7 +47,7 @@
     font-size: 25px;
     font-weight: 600;
     left: 40px;
-    z-index: 3;
+    z-index: 0;
 }
 
 .hot-tag-mini{
@@ -57,7 +57,7 @@
     font-size: 20px;
     font-weight: 600;
     left: 20px;
-    z-index: 3;
+    z-index: 0;
 }
 
 .audio-card-mini {
@@ -148,6 +148,7 @@
     justify-content: space-between;
     margin-top: 5px;
     padding: 3px;
+    z-index: 0;
 }
 
 .restart-btn {
@@ -177,6 +178,7 @@
     align-items: center;
     left: 20px;
     padding: 5px;
+    z-index: 0;
 }
 
 .play-btn-box2 {
@@ -184,6 +186,7 @@
     position: relative;
     justify-content: center;
     align-items: center;
+    z-index: 0;
 }
 
 .play-btn-wrapper {

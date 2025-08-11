@@ -2,31 +2,20 @@ html{
     scroll-behavior: smooth;
 }
 
-.music-title{
-    text-align: center;
-    color: #6d049eff;
-    margin-bottom: 40px;
-    font-weight: 500;
-    padding-top: 70px;
-    padding-bottom: 20px;
-    font-size: 35px;
-    z-index: 3;
-    background-color: white;
-}
-
 .music-menu {
+    padding-top: 55px;
+    padding-bottom: 10px;
     width: 100%;
     text-align: center;
-    margin-top: -50px;
-    padding-bottom: 10px;
     position: sticky;
-    background-color: white;
+    background-color: #ba9dc7;
+    height: 30px;
     
 }
 
 .music-menu a{
     padding: 20px;
-    color: #ba9dc7;
+    color: #5151ff;
     font-size: 25px;
     text-decoration: none;
 }
@@ -71,10 +60,54 @@ html{
     background-image: url('');
 }
 
+.nav-menu-textbox{
+    width: 100%;
+    position: absolute;
+
+}
+
 #music-page-new{
-    scroll-margin-top: 165px;
+    scroll-margin-top: 150px;
 }
 
 #music-page-hot{
-    scroll-margin-top: 150px;
+    scroll-margin-top: 90px;
 }
+
+#music-page-artists{
+    scroll-margin-top: 40px;
+}
+
+.artists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 60px;
+    width: 100%;
+    padding-top: 80px;
+}
+
+    .artists img{
+    height: 280px;
+    width: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    }
+
+    .artist-name{
+    font-size: 25px;
+    color: #6d049eff;
+    text-align: center;
+    width: 100%;
+    }
+
+    .artist-description{
+    font-size: 18px;
+    font-weight: 100;
+    color: #4d4d4d;
+    text-align: center;
+    width: 200px;
+    }
+
