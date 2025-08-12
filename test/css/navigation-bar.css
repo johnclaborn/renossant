@@ -71,7 +71,7 @@ nav {
     z-index: -1;
     background-color: #ba9dc7;
     position: absolute;
-    top:10px;
+    top: 14px;
 }
 
 @media (min-width: 1200px) {

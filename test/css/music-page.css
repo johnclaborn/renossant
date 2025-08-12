@@ -15,9 +15,10 @@ html{
 
 .music-menu a{
     padding: 20px;
-    color: #5151ff;
+    color: #ffffff;
     font-size: 25px;
     text-decoration: none;
+    
 }
 
 .music-menu a:hover{
@@ -112,3 +113,4 @@ html{
     width: 200px;
     }
 
+    
