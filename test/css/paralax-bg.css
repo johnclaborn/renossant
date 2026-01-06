@@ -1,9 +1,10 @@
 .background-image {
-  background-image: url('../images/ckjones3.png');
+  background-image: url('../images/oh.png');
   background-size: cover;
-  background-position: 40% top;
+  background-position: 50% top;
   background-repeat: no-repeat;
   position: absolute;
+  opacity: 50%;
   width: 100%;
   margin: 0;
   height: 120%; /* bigger than container for parallax room */
