@@ -74,7 +74,7 @@ nav {
     top: 14px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
     .menu-toggle {
     display: none;
     }
