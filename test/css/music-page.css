@@ -3,13 +3,13 @@ html{
 }
 
 .music-menu {
-    padding-top: 55px;
+    padding-top: 53px;
     padding-bottom: 10px;
     width: 100%;
     text-align: center;
     position: sticky;
     background-color: #ba9dc7;
-    height: 30px;
+    height: 20px;
     
 }
 
@@ -112,5 +112,16 @@ html{
     text-align: center;
     width: 200px;
     }
+@media (min-width: 800px){
+    .music-menu {
+    padding-top: 58px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    position: sticky;
+    background-color: #ba9dc7;
+    height: 25px;
+}
 
+}
     

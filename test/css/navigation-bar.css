@@ -95,12 +95,13 @@ nav {
 
     .nav-links a {
         margin-left: 20px;
-        font-size: 23px;
+        font-size: 16px;
         font-weight: 100;
+        margin-top: -15px;
     }
 
     #navbar-logo{
-        margin-top: 0px;
+        margin-top: 10px;
         margin-left: 20px;
         margin-right: 250px;
     }
@@ -110,18 +111,13 @@ nav {
     text-align: center;
     color: #6d049eff;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 25px;
     z-index: -1;
     background-color: #ba9dc7;
     position: absolute;
-    top:10px;
+    top: 30px;
+    height: 35px;
     } 
-
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 }
 
 
