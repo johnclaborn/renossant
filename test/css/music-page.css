@@ -3,20 +3,20 @@ html{
 }
 
 .music-menu {
-    padding-top: 53px;
+    padding-top: 64px;
     padding-bottom: 10px;
     width: 100%;
     text-align: center;
     position: sticky;
-    background-color: #ba9dc7;
-    height: 20px;
+    background-color: #a389b1;
+    height: 25px;
     
 }
 
 .music-menu a{
     padding: 20px;
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
     text-decoration: none;
     
 }
@@ -109,7 +109,7 @@ html{
     text-align: center;
     width: 200px;
     }
-@media (min-width: 800px){
+@media (min-width: 8000px){
     .music-menu {
     padding-top: 58px;
     padding-bottom: 10px;

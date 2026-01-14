@@ -245,6 +245,12 @@
     justify-content: center;
 }
 
+.metadata {
+    font-size: 11px;
+    color: #59ad6b;
+    margin-bottom: 3px;
+}
+
 .track-text .artist {
     font-size: 1.3rem;
     color: #6d049eff;
