@@ -73,7 +73,7 @@
             <div class="nav-menu-textbox">
             <a href="#music-page-new">NEW!</a>
             <a href="#music-page-hot">Hot!</a>
-            <a href="#music-page-playlists">Playlists</a>
+            <a href="music-page-playlists">Playlists</a>
             </div>
         </div>
 
@@ -103,7 +103,6 @@
         </div>
         
         <div class="track-text">
-            <div class="metadata">Pop - Opptimistic - 102 bpm - A Minor</div>
             <div>John Claborn</div>
             <div class="credits">presents</div>
             <div class="artist">Jasmin Rosaleen</div>
@@ -169,7 +168,6 @@
         </div>
         
         <div class="track-text">
-            <div class="metadata">Hiphop - Mellow - 70 bpm - D Minor</div>
             <div class="artist">John Claborn</div>
             <div class="title">The City Ain't Safe</div>
             <div class="title2">feat. Lou CharLe$</div>
@@ -206,7 +204,6 @@
         </div>
         
         <div class="track-text">
-            <div class="metadata">Hiphop - Determination - 91 bpm - A Minor</div>
             <div class="artist">John Claborn</div>
             <div class="title">Anything I Want</div>
             <div class="title2">feat. Chamillionaire, Carissa Cruz, Jevon Angel and Versy</div>
@@ -242,7 +239,6 @@
         </div>
         
         <div class="track-text">
-            <div class="metadata">Hiphop - Determination - 80 bpm - F# major</div>
             <div class="artist">Versy</div>
             <div class="title">Like A Boss</div>
             <div class="title2"></div>
@@ -315,7 +311,6 @@
         </div>
         <div class="mini-wrapper-right">
             <div class="track-text">
-                <div class="metadata">Hiphop - Motivated - 73 bpm - G minor</div>
                 <div class="artist">Versy</div>
                 <div class="title">If It Ain't</div>
                 <div class="title2">feat. Drastic</div>
@@ -343,7 +338,6 @@
         </div>
         <div class="mini-wrapper-right">
             <div class="track-text">
-                <div class="metadata">Romance - 53 bpm - E major</div>
                 <div class="artist">Jasmin Rosaleen</div>
                 <div class="title">Houston</div>
                 <div class="title2"></div>
@@ -367,16 +361,45 @@
 
             </div> <!-- music page hot end -->
 
-      <div id="music-page-playlists"></div>
-      <div class="playlist-title">Playlists</div>
-      <div class="music-page-hot">pick a mood or category for music licensing!</div>
-      <div class="playlist-list">
-                <a href="../determination">Determination</a>
-                <a href="../romance">Romance</a>
-                <a href="../optimistic">Optimistic</a>
-                <a href="../christmas">Christmas</a>
-                <a href="../mellow">Mellow</a>
+            <div class="artists" id="music-page-artists">
+        <div class="artits-card">
+            <img src="../images/johnclaborn2.png">
+            <div class="artist-name">John Claborn</div>
+            <div class="artist-description">Music Producer / Vocal Designer</div>
         </div>
+
+         <div class="artits-card">
+            <img src="../images/versy 2.png" style="object-position: right;">
+            <div class="artist-name">Versy</div>
+            <div class="artist-description">Artist / Songwriter / Music Producer</div>
+        </div>
+
+        <div class="artits-card">
+            <img src="../images/ckjones2.png">
+            <div class="artist-name">CK Jones Music</div>
+            <div class="artist-description">Artist / Music Producer / DJ</div>
+        </div>
+
+        <div class="artits-card">
+            <a href="../produkt">
+              <img src="../images/produkt13.png">
+            </a>
+            <div class="artist-name">Main Produkt</div>
+            <div class="artist-description">Artist / Music Producer</div>
+        </div>
+
+        <div class="artits-card">
+            <img src="../images/kingsco.png">
+            <div class="artist-name">King Sco</div>
+            <div class="artist-description">Artist / Songwriter / Music Producer</div>
+        </div>
+
+        <div class="artits-card">
+            <img src="../images/jasmin.png">
+            <div class="artist-name">Jasmin Rosaleen</div>
+            <div class="artist-description">Artist / Songwriter</div>
+        </div>
+      </div>
 
             <!--copyright start-->
             <div class="copyright">Copyright © 2026</div>

@@ -72,6 +72,16 @@ html{
     scroll-margin-top: 90px;
 }
 
+.playlist-title{
+    width: 100%;
+    text-align: center;
+    color: #6d049eff;
+    font-weight: 500;
+    font-size: 25px;
+    z-index: 0;
+    position: absolute;
+}
+
 #music-page-artists{
     scroll-margin-top: 40px;
 }
@@ -109,6 +119,19 @@ html{
     text-align: center;
     width: 200px;
     }
+
+    .playlist-list{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+    }    
+
 @media (min-width: 8000px){
     .music-menu {
     padding-top: 58px;
