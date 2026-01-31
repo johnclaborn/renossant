@@ -72,6 +72,10 @@ html{
     scroll-margin-top: 90px;
 }
 
+#music-page-playlists{
+    scroll-margin-top: 90px;
+}
+
 .playlist-title{
     width: 100%;
     text-align: center;
