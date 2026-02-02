@@ -97,6 +97,7 @@
           justify-content: center;
           align-items: center;
           object-fit: cover;
+          border-radius: 16px;
       }
 
       .photo-strip-albums img {
@@ -107,6 +108,7 @@
           justify-content: center;
           align-items: center;
           object-fit: cover;
+          border-radius: 16px;
       }
 
       .description, .animated-paragraph {
@@ -148,30 +150,32 @@
     
 
     <!--navigation bar start-->
-    <nav aria-label="Main Navigation">
-        <div class="nav-brand">Renossant.com</div>
-        <div class="menu-toggle" id="menu-toggle">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="nav-links" id="nav-links">
-            <a href="../index.html">Lobby</a>
-            <a href="../artists">Artists</a>
-            <a href="../merch">Merch</a>
-            <a href="../about">About</a>
-            <a href="../connect">Connect</a>
-        </div>
-    </nav>
-    <!--navigation bar end-->
+<nav aria-label="Main Navigation">
+    <a href="../index.html">
+        <img id="navbar-logo" src="../images/renossant.png">
+    </a>
+    <div class="menu-toggle" id="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="nav-links" id="nav-links">
+        <a href="../music">Music</a>
+        <a href="">Publishing</a>
+        <a href="../merch">Merch</a>
+        <a href="../about">About</a>
+        <a href="../connect">Connect</a>
+    </div>
+    <div class="page-title">About</div> <!-- change page title -->
+</nav>
+<!--navigation bar end-->
 
 
   </header>
 
   <div class="page">
 
-  <h1 class="scroll-fade">About</h1>
+  <h1 class="scroll-fade"></h1>
 
   <div class="photo-strip scroll-fade">
     <img src="../images/renossant.png">
@@ -183,7 +187,7 @@
   </p>
 
     <div class="photo-strip2 scroll-fade">
-        <img src="../images/johnclaborn.png">
+        <img src="../images/johnclaborn.png" style="object-position: top; height: 100%;">
     </div>
 
   <p class="description scroll-fade">
@@ -228,9 +232,9 @@
   </p>
 
   <div class="photo-strip2 scroll-fade">
-    <img src="../images/grammy.png">
-    <img src="../images/nike3.png">
-    <img src="../images/grammy2.png" style="height: auto">
+    <img src="../images/grammybig.png" style="height:500px">
+    <img src="../images/nikeplaquebig.png" style="height: 500px">
+    <img src="../images/grammy2.png" style="height: 500px">
   </div>
 
   <p class="description scroll-fade">
@@ -252,7 +256,7 @@
     <p class="description scroll-fade">
         Nike Basketball short "Bring Your Game"-over 10 million original views
     </p>
-     <div class="copyright">Copyright © 2025</div>
+     <div class="copyright">Copyright © 2026</div>
   </div>
 
   <script src="../js/navigation-bar.js" defer></script>

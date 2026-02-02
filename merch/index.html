@@ -29,11 +29,16 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" 
       rel="stylesheet"
     >
+    <link rel="stylesheet" href="css/paralax-bg.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/navigation-bar.css">
     <link rel="stylesheet" href="../css/copyright.css">
+    <link rel="stylesheet" href="../css/photo-strip.css">
+    <link rel="stylesheet" href="../css/music-cards.css">
+    <link rel="stylesheet" href="css/lobby-logo.css">
     <link rel="stylesheet" href="../css/merch-shop.css">
-
+    <link rel="stylesheet" href="../css/music-page.css">
+    
     <style>
     </style>
   </head>
@@ -43,30 +48,32 @@
 
       
       <!--navigation bar start-->
-      <nav aria-label="Main Navigation">
-          <div class="nav-brand">Renossant.com</div>
-          <div class="menu-toggle" id="menu-toggle">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-          </div>
-          <div class="nav-links" id="nav-links">
-              <a href="../index.html">Lobby</a>
-              <a href="../artists">Artists</a>
-              <a href="../merch">Merch</a>
-              <a href="../about">About</a>
-              <a href="../connect">Connect</a>
-          </div>
-      </nav>
-      <!--navigation bar end-->
+<nav aria-label="Main Navigation">
+    <a href="../index.html">
+        <img id="navbar-logo" src="../images/renossant.png">
+    </a>
+    <div class="menu-toggle" id="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="nav-links" id="nav-links">
+        <a href="../music">Music</a>
+        <a href="">Publishing</a>
+        <a href="../merch">Merch</a>
+        <a href="../about">About</a>
+        <a href="../connect">Connect</a>
+    </div>
+    <div class="page-title">Merch Shop</div> <!-- change page title -->
+</nav>
+<!--navigation bar end-->
 
 
     </header>
 
     <div class="page">
 
-      <h1>Merch Shop</h1>
+      <h1></h1>
 
 
   <!-- merch shop start -->
@@ -99,13 +106,13 @@
             <option>Green</option>
           </select>
         </div>
-        <button onclick="addToCart('Renossant Creator Tee')">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('Renossant Creator Tee')">Add to Cart</button>
       </div>
       <!-- item end -->
 
       <!-- item start -->
       <div class="item">
-        <img src="../images/freestyletank.png" alt="Renossant Freestyle Tank"/>
+        <img src="../images/freestyletank.png" alt="Renossant Freestyle Tank" style="object-position: top" />
         <h2>Renossant Freestyle Tank</h2>
         <p class="price-label">$<span class="price-display">45</span></p>
         <div class="selectors">
@@ -122,13 +129,13 @@
             <option>White</option>
           </select>
         </div>
-        <button onclick="addToCart('Renossant Freestyle Tank')">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('Renossant Freestyle Tank')">Add to Cart</button>
       </div>
       <!-- item end -->
 
       <!-- item start -->
       <div class="item">
-        <img src="../images/riftashirt.png" alt="RIFTA Shirt"/>
+        <img src="../images/riftashirt.png" alt="RIFTA Shirt" style="object-position: top"/>
         <h2>RIFTA Shirt</h2>
         <p class="price-label">$<span class="price-display">44</span></p>
         <div class="selectors">
@@ -144,7 +151,7 @@
             <option value="4XL">4XL</option>
           </select>
         </div>
-        <button onclick="addToCart('RIFTA Shirt')">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('RIFTA Shirt')">Add to Cart</button>
       </div>
       <!-- item end -->
 
@@ -166,7 +173,7 @@
             <option value="4XL">4XL</option>
           </select>
         </div>
-        <button onclick="addToCart('The Huckleberry Show Lawmans Shirt')">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('The Huckleberry Show Lawmans Shirt')">Add to Cart</button>
       </div>
       <!-- item end -->
 
@@ -183,7 +190,7 @@
             <option>Red</option>
           </select>
         </div>
-        <button onclick="addToCart('Renossant Creative Cap')">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('Renossant Creative Cap')">Add to Cart</button>
       </div>
       <!-- item end -->
 
@@ -201,7 +208,7 @@
             <option>Red</option>
           </select>
         </div>
-        <button onclick="addToCart('Renossant Builders Beanie')">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('Renossant Builders Beanie')">Add to Cart</button>
       </div>
       <!-- item end -->
 
@@ -210,13 +217,13 @@
         <img src="../images/riftacoffeemug.png" alt="RIFTA Coffee Mug"/>
         <h2>RIFTA Coffee Mug</h2>
         <p class="price-label">$<span class="price-display">17</span></p>
-        <button onclick="addToCart('RIFTA Coffee Mug', 17)">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('RIFTA Coffee Mug', 17)">Add to Cart</button>
       </div>
        <div class="item">
         <img src="../images/huckleberrymug.png" alt="The Huckleberry Show Mug"/>
         <h2>The Huckleberry Show Mug</h2>
         <p class="price-label">$<span class="price-display">17</span></p>
-        <button onclick="addToCart('The Huckleberry Show Mug', 17)">Add to Cart</button>
+        <button id="merch-button" onclick="addToCart('The Huckleberry Show Mug', 17)">Add to Cart</button>
       </div>
     </div>
     <!-- item end -->
@@ -229,7 +236,7 @@
       <div id="cashapp-instructions" style="display:none;"><strong></strong><br />Complete your order!
       Fill out shipping on next page. Thank you!</div>
       <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
-      <button onclick="sendToGoogleForm()" style="margin-top: 20px;">
+      <button id="merch-button" onclick="sendToGoogleForm()" style="margin-top: 20px;">
         Complete Order
       </button>
     </div>
@@ -242,7 +249,7 @@
 
 
       <!--copyright start-->
-      <div class="copyright">Copyright © 2025</div>
+      <div class="copyright">Copyright © 2026</div>
       <!--copyright end-->
 
     </div>

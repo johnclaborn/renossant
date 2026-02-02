@@ -1,7 +1,7 @@
 header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1;
 }
 
 body {
@@ -13,10 +13,8 @@ body {
 .page {
     margin: 0;
     background: #ffffff;
-    font-family: 'Barlow Condensed', sans-serif;
     height: auto;
     overflow: hidden;
-    color: #aaa;
     width: 100%;
     position: relative;
 }
@@ -26,14 +24,16 @@ h1 {
     color: #6d049eff;
     margin-bottom: 40px;
     font-weight: 500;
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 h2{
     letter-spacing: 3px;
     padding: 12px;
     text-align: center;
+    color: #aaa;
 }
+
 
 #email{
     font-size: 25px;
