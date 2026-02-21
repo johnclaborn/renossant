@@ -34,6 +34,14 @@ h2{
     color: #aaa;
 }
 
+h3 {
+    text-align: center;
+    color: #6d049eff;
+    margin-bottom: 0px;
+    font-weight: 500;
+    padding-top: 0px;
+}
+
 
 #email{
     font-size: 25px;
