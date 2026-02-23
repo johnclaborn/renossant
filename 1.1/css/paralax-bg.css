@@ -1,0 +1,29 @@
+.background-image {
+  background-image: url('../images/oh.png');
+  background-size: cover;
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 50%;
+  width: 100%;
+  margin: 0;
+  height: 60%; /* bigger than container for parallax room */
+  z-index: 0;
+  will-change: transform;
+}
+
+@media (min-width: 800px) {
+  .background-image {
+  background-image: url('../images/oh.png');
+  background-size: cover;
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 50%;
+  width: 100%;
+  margin: 0;
+  height: 90%; /* bigger than container for parallax room */
+  z-index: 0;
+  will-change: transform;
+}
+}
